@@ -661,5 +661,14 @@ def get_server_config() -> dict[str, Any]:
     }
 
 
+from pdf_reader_server import mcp as _pdf_reader_mcp
+from pdf_writer_server import mcp as _pdf_writer_mcp
+from pdf_to_csv_server import mcp as _pdf_to_csv_mcp
+
+mcp.mount(_pdf_reader_mcp)
+mcp.mount(_pdf_writer_mcp)
+mcp.mount(_pdf_to_csv_mcp)
+
+
 if __name__ == "__main__":
     mcp.run()
